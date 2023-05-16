@@ -5,19 +5,19 @@
 
 Mini CIM 0 = PWM 0 
 
-NeveRest 1 = PWM 1 
+NeveRest 1 = PWM 1 //Mini CIM 0 Drive Rotation Motor
 
 Mini CIM 2 = PWM 2 
 
-NeveRest 3 = PWM 3 
+NeveRest 3 = PWM 3 //Mini CIM 2 Drive Rotation Motor
 
 Mini CIM 4 = PWM 4 
 
-NeveRest 5 = PWM 5 
+NeveRest 5 = PWM 5 //Mini CIM 4 Drive Rotation Motor
 
 Mini CIM 6 = PWM 6 
 
-NeveRest 7 = PWM 7 
+NeveRest 7 = PWM 7 //Mini CIM 6 Drive Rotation Motor
 
 NeveRest 1 Encoder = DIO 0 and 1 
 
