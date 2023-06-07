@@ -34,3 +34,8 @@ Mini CIM 2 Encoder = Rio DIO 2 and 3 //Mini CIM 2 Drive Distance Motor (NavX DIO
 Mini CIM 4 Encoder = Rio DIO 4 and 5 //Mini CIM 4 Drive Distance Motor (NavX DIO Code Ref 14 and 15) 
 
 Mini CIM 6 Encoder = Rio DIO 6 and 7 //Mini CIM 6 Drive Distance Motor (NavX DIO Code Ref 16 and 17)
+
+
+
+# Resources
+[MXP IO Expansion](https://pdocs.kauailabs.com/navx-mxp/installation/io-expansion/)
