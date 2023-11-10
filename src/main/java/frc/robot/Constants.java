@@ -4,55 +4,49 @@
 
 package frc.robot;
 
+import edu.wpi.first.math.geometry.Translation3d;
+import edu.wpi.first.math.util.Units;
+import swervelib.math.Matter;
+import swervelib.parser.PIDFConfig;
+
 /**
- * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
- * constants. This class should not be used for any other purpose. All constants should be declared
- * globally (i.e. public static). Do not put anything functional in this class.
+ * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean constants. This
+ * class should not be used for any other purpose. All constants should be declared globally (i.e. public static). Do
+ * not put anything functional in this class.
  *
  * <p>It is advised to statically import this class (or one of its inner classes) wherever the
  * constants are needed, to reduce verbosity.
  */
-public final class Constants {
-  public static class OperatorConstants {
-    public static final int kDriverControllerPort = 0;
-  }
-  public interface SwerveDrivetrainConstants {
+public final class Constants
+{
 
-    // Length and Width of robot in inches
-    public final double L = 25;
-    public final double W = 23;
-  
-    // PIDF Variables
-    public final double kP = 0.02;
-    public final double kI = 0.0;
-    public final double kD = 0.0;
-    public final double kF = 0.0;
-    
-    // Quadrature Encoder Ticks per Rotation
-    public final int QUAD_COUNTS_PER_ROT = 1658;
-  
-    // Talon SRX Turn Motor CAN ID
-    public final int frontLeftTurnTalonID = 31;
-    public final int frontRightTurnTalonID = 41;
-    public final int backLeftTurnTalonID = 11;
-    public final int backRightTurnTalonID = 21;
-  
-    // IDs for Drive Motors
-    public final int frontLeftDriveID = 32;
-    public final int frontRightDriveID = 42;
-    public final int backLeftDriveID = 0;
-    public final int backRightDriveID = 22;
-  
-    // Analog Encoder ID
-    public final int frontLeftEncoderID = 0;
-    public final int frontRightEncoderID = 1;
-    public final int backLeftEncoderID = 2;
-    public final int backRightEncoderID = 3;
-  
-    // Offset of analog to make encoders face forward
-    public final int frontLeftEncoderOffset = 1850;
-    public final int frontRightEncoderOffset = 3675;
-    public final int backLeftEncoderOffset = 550;
-    public final int backRightEncoderOffset = 1600;
+  public static final double ROBOT_MASS = (148 - 20.3) * 0.453592; // 32lbs * kg per pound
+  public static final Matter CHASSIS    = new Matter(new Translation3d(0, 0, Units.inchesToMeters(8)), ROBOT_MASS);
+  public static final double LOOP_TIME  = 0.13; //s, 20ms + 110ms sprk max velocity lag
+
+  public static final class Auton
+  {
+
+    public static final PIDFConfig xAutoPID     = new PIDFConfig(0.7, 0, 0);
+    public static final PIDFConfig yAutoPID     = new PIDFConfig(0.7, 0, 0);
+    public static final PIDFConfig angleAutoPID = new PIDFConfig(0.4, 0, 0.01);
+
+    public static final double MAX_SPEED        = 4;
+    public static final double MAX_ACCELERATION = 2;
+  }
+
+  public static final class Drivebase
+  {
+
+    // Hold time on motor brakes when disabled
+    public static final double WHEEL_LOCK_TIME = 10; // seconds
+  }
+
+  public static class OperatorConstants
+  {
+
+    // Joystick Deadband
+    public static final double LEFT_X_DEADBAND = 0.01;
+    public static final double LEFT_Y_DEADBAND = 0.01;
   }
 }
